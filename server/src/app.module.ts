@@ -1,11 +1,23 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MsqlModule } from './msql/msql.module';
+import { MysqlModule } from './msql/msql.module';
+import { UsersModule } from './users/users.module';
+import { PostsModule } from './posts/posts.module';
 
 @Module({
-  imports: [MsqlModule],
+  imports: [
+    MysqlModule.forRoot({
+      host: '127.0.0.1',
+      database: 'test',
+      password: 'root',
+      user: 'root',
+      port: 3306,
+    }),
+    UsersModule,
+    PostsModule,
+  ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService],  
 })
 export class AppModule {}
