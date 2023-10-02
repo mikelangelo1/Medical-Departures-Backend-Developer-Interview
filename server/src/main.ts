@@ -4,7 +4,7 @@ dotenv.config();
 import { NestFactory } from '@nestjs/core';
 import { appConfig } from './app.config';
 import { AppModule } from './app.module';
-import { PrismaService } from './prisma/prisma.service';
+// import { PrismaService } from './prisma/prisma.service';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import morgan = require('morgan');
@@ -19,8 +19,8 @@ async function bootstrap() {
     logger: new InternalNestLogger(appConfig.logging.options),
   });
 
-  const prismaService = app.get(PrismaService);
-  await prismaService.enableShutdownHooks(app);
+  // const prismaService = app.get(PrismaService);
+  // await prismaService.enableShutdownHooks(app);
 
   /**
    * Configure Security Middlewares

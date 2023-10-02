@@ -9,8 +9,8 @@ import { PostsModule } from './posts/posts.module';
   imports: [
     MysqlModule.forRoot({
       host: '127.0.0.1',
-      database: 'test',
-      password: 'root',
+      database: 'medical_departures',
+      password: 'Akinolami6650',
       user: 'root',
       port: 3306,
     }),

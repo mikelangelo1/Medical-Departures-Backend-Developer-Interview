@@ -1,5 +1,12 @@
-import { CircularDependencyException } from '../exceptions/circular-dependency.exception';
 import { MysqlModuleOptions } from '../interfaces';
+import { DEFAULT_CONNECTION_NAME } from '../mysql.constants';
+import { Observable } from 'rxjs';
+import { delay, retryWhen, scan } from 'rxjs/operators';
+import { randomUUID } from 'node:crypto';
+import { Logger } from '@nestjs/common';
+import { CircularDependencyException } from '../exceptions/circular-dependency.exception';
+
+const logger = new Logger('MysqlModule');
 
 /**
  * This function returns a Connection prefix based on the connection name
