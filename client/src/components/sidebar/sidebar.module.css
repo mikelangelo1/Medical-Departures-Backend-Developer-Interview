@@ -1,0 +1,21 @@
+.container{
+
+}
+
+.items-wrapper{
+
+}
+
+.items-wrapper span{
+    display: none;
+}
+
+/* .items-wrapper:hover span{
+    display: inline;
+} */
+
+@media (min-width: 768px){
+    .items-wrapper span{
+        display: inline;
+    }
+}

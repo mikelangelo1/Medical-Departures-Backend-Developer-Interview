@@ -44,7 +44,13 @@ export const appConfig = {
       return `${appConfig.storage.basePath}/temp`;
     },
   },
-
+  db: {
+    host: '127.0.0.1',
+    database: 'medical_departures',
+    password: 'Akinolami6650',
+    user: 'root',
+    port: 3306,
+  },
   logging: {
     get options() {
       const options: LoggerModuleOptions = {

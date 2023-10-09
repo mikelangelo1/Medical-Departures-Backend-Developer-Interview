@@ -7,7 +7,6 @@ USE medical_departures;
 -- CreateTable
 CREATE TABLE IF NOT EXISTS `User` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `firebaseUid` VARCHAR(191) NOT NULL,
     `username` VARCHAR(191) NOT NULL,
     `name` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
